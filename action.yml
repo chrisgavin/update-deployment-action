@@ -1,0 +1,31 @@
+name: Update Deployment Action
+description: A GitHub Action that keeps the status of a deployment in sync with the state of the workflow.
+runs:
+  using: node12
+  main: ./bootstrap-shim.js
+  post: ./build/post.js
+inputs:
+  github-token:
+    description: A GitHub access token for the current repository.
+    required: true
+    default: ${{ github.token }}
+  github-repository:
+    description: The name of the current repository.
+    required: true
+    default: ${{ github.repository }}
+  deployment-id:
+    description: The ID of the deployment to keep up-to-date.
+    required: true
+    default: ${{ github.event.deployment.id }}
+  status:
+    description: The status of the workflow.
+    required: true
+    default: ${{ job.status }}
+  server-url:
+    description: The GitHub server URL, used for getting the log URL.
+    required: true
+    default: ${{ github.server_url }}
+  run-id:
+    description: The Actions run ID, used for getting the log URL.
+    required: true
+    default: ${{ github.run_id }}
