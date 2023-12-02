@@ -1,7 +1,7 @@
 name: Update Deployment Action
 description: A GitHub Action that keeps the status of a deployment in sync with the state of the workflow.
 runs:
-  using: node12
+  using: node20
   main: ./bootstrap-shim.js
   post: ./build/post.js
 inputs:
