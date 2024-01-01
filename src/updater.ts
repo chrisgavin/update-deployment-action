@@ -6,7 +6,12 @@ type state = "in_progress" | "error" | "failure" | "inactive" | "queued" | "pend
 
 export async function setState(state: state): Promise<void> {
 	const [owner_name, repository_name] = inputs.get().githubRepository.split("/");
-	const octokit = github.getOctokit(inputs.get().githubToken);
+	const octokit = github.getOctokit(
+		inputs.get().githubToken,
+		{
+			request: { fetch: fetch }
+		},
+	);
 	core.info(`Setting deployment status for deployment ${inputs.get().deploymentID} to ${state}...`);
 	await octokit.rest.repos.createDeploymentStatus({
 		owner: owner_name,
