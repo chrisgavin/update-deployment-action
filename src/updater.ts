@@ -1,6 +1,6 @@
 import * as core from "@actions/core";
 import * as github from "@actions/github";
-import * as inputs from "./inputs";
+import * as inputs from "./inputs.js";
 
 type state = "in_progress" | "error" | "failure" | "inactive" | "queued" | "pending" | "success";
 
