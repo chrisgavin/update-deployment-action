@@ -1,6 +1,7 @@
 {
 	"name": "update-deployment-action",
 	"version": "0.0.0",
+	"type": "module",
 	"description": "A GitHub Action that keeps the status of a deployment in sync with the state of the workflow.",
 	"scripts": {
 		"build": "tsc",
