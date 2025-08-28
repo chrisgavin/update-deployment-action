@@ -5,6 +5,14 @@ runs:
   main: ./bootstrap-shim.js
   post: ./build/post.js
 inputs:
+  environment:
+    description: The environment being deployed.
+    required: true
+    default: production
+  ref:
+    description: The ref being deployed.
+    required: true
+    default: ${{ github.ref || github.sha }}
   github-token:
     description: A GitHub access token for the current repository.
     required: true

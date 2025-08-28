@@ -14,6 +14,8 @@ afterEach(() => {
 describe("test setState(...)", () => {
 	it("should create deployment statuses correctly", async () => {
 		jest.spyOn(inputs, "get").mockReturnValue({
+			environment: "production",
+			ref: "refs/heads/master",
 			githubToken: "secret-token",
 			githubRepository: "foo/bar",
 			deploymentID: 17,
@@ -22,6 +24,6 @@ describe("test setState(...)", () => {
 			runID: "123",
 		});
 		fetchMock.postOnce("https://api.github.com/repos/foo/bar/deployments/17/statuses", {state: "in_progress", log_url: "https://github.com/foo/bar/actions/runs/123"}, {});
-		await updater.setState("in_progress");
+		await updater.setState(17, "in_progress");
 	});
 });
