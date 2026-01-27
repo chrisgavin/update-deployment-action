@@ -22,6 +22,6 @@
 		"fetch-mock": "^12.5.4",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.45.0",
-		"vitest": "^2.1.8"
+		"vitest": "^4.0.0"
 	}
 }
