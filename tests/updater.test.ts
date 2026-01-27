@@ -1,3 +1,4 @@
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import fetchMock from "fetch-mock";
 import * as inputs from "./../src/inputs";
 import * as updater from "./../src/updater";
@@ -13,7 +14,7 @@ afterEach(() => {
 
 describe("test setState(...)", () => {
 	it("should create deployment statuses correctly", async () => {
-		jest.spyOn(inputs, "get").mockReturnValue({
+		vi.spyOn(inputs, "get").mockReturnValue({
 			environment: "production",
 			ref: "refs/heads/master",
 			githubToken: "secret-token",
