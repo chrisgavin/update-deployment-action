@@ -17,7 +17,7 @@
 	},
 	"devDependencies": {
 		"@tsconfig/node20": "^20.1.6",
-		"@types/node": "^20.14.8",
+		"@types/node": "^24.0.0",
 		"@types/source-map-support": "^0.5.10",
 		"eslint": "^9.36.0",
 		"fetch-mock": "^12.5.4",
