@@ -1,8 +1,12 @@
 {
 	"extends": "@tsconfig/node20/tsconfig.json",
 	"compilerOptions": {
+		"rootDir": "./src/",
 		"outDir": "./build/",
-		"sourceMap": true
+		"sourceMap": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"types": ["node"]
 	},
 	"include": [
 		"./src/"
