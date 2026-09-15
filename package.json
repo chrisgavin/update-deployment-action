@@ -22,6 +22,6 @@
 		"fetch-mock": "^12.5.4",
 		"oxlint": "^1.74.0",
 		"typescript": "^7.0.0",
-		"vitest": "^4.0.0"
+		"vitest": "^5.0.0"
 	}
 }
